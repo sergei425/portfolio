@@ -1,7 +1,9 @@
-import { Toolbar } from "./components/toolbar/index";
-import "./App.css";
 import { useState } from "react";
-import { ProjectList } from "./components/project-list";
+import { Portfolio } from './components/portfolio/index';
+import "./App.css";
+
+
+
 
 const filters = ["All", "Websites", "Flayers", "Business Cards"];
 
@@ -95,12 +97,7 @@ function App() {
 
   return (
     <div className="App">
-      <Toolbar
-        filters={filters}
-        select={filter}
-        onSelectFilter={onSelectFilter}
-      />
-      <ProjectList portfolio={newPortfolio}/>
+      <Portfolio filters={filters} portfolio={newPortfolio} filter={filter} onSelectFilter={onSelectFilter}/>
     </div>
   );
 }
